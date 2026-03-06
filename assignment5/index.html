@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interactive Form with real-time validation — SuprMentor Assignment 5" />
+    <title>Interactive Form | SuprMentor Assignment 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="page-wrapper">
+
+        <!-- Header -->
+        <header class="page-header">
+            <div class="badge">Assignment 5 — 02/03/2026</div>
+            <h1>Interactive Form</h1>
+            <p class="subtitle">Fill in the details below. All fields are validated in real-time.</p>
+        </header>
+
+        <!-- Form Card -->
+        <main class="card">
+
+            <!-- Success Banner (hidden by default) -->
+            <div class="success-banner" id="successBanner">
+                <span class="success-icon">✓</span>
+                <div>
+                    <strong>Form Submitted Successfully!</strong>
+                    <p>Thank you! Your details have been received.</p>
+                </div>
+            </div>
+
+            <form id="registrationForm" novalidate>
+
+                <!-- Row 1: Full Name + Username -->
+                <div class="form-row">
+                    <div class="form-group" id="group-fullName">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="fullName" name="fullName" placeholder="e.g. Alice Johnson"
+                                autocomplete="name" />
+                        </div>
+                        <span class="error-msg" id="error-fullName"></span>
+                    </div>
+
+                    <div class="form-group" id="group-username">
+                        <label for="username">Username <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔖</span>
+                            <input type="text" id="username" name="username" placeholder="e.g. alice_99"
+                                autocomplete="username" />
+                        </div>
+                        <span class="error-msg" id="error-username"></span>
+                    </div>
+                </div>
+
+                <!-- Row 2: Email + Phone -->
+                <div class="form-row">
+                    <div class="form-group" id="group-email">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">✉️</span>
+                            <input type="email" id="email" name="email" placeholder="e.g. alice@example.com"
+                                autocomplete="email" />
+                        </div>
+                        <span class="error-msg" id="error-email"></span>
+                    </div>
+
+                    <div class="form-group" id="group-phone">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📱</span>
+                            <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210"
+                                autocomplete="tel" />
+                        </div>
+                        <span class="error-msg" id="error-phone"></span>
+                    </div>
+                </div>
+
+                <!-- Row 3: Date of Birth + Gender -->
+                <div class="form-row">
+                    <div class="form-group" id="group-dob">
+                        <label for="dob">Date of Birth <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📅</span>
+                            <input type="date" id="dob" name="dob" />
+                        </div>
+                        <span class="error-msg" id="error-dob"></span>
+                    </div>
+
+                    <div class="form-group" id="group-gender">
+                        <label for="gender">Gender <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">⚧</span>
+                            <select id="gender" name="gender">
+                                <option value="">— Select Gender —</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="non-binary">Non-Binary</option>
+                                <option value="prefer-not">Prefer not to say</option>
+                            </select>
+                        </div>
+                        <span class="error-msg" id="error-gender"></span>
+                    </div>
+                </div>
+
+                <!-- Row 4: Password + Confirm Password -->
+                <div class="form-row">
+                    <div class="form-group" id="group-password">
+                        <label for="password">Password <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="password" name="password"
+                                placeholder="Min 8 chars, 1 number, 1 special" autocomplete="new-password" />
+                            <button type="button" class="toggle-password" id="togglePassword"
+                                aria-label="Toggle password visibility">👁</button>
+                        </div>
+                        <div class="password-strength" id="passwordStrength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <span class="strength-label" id="strengthLabel"></span>
+                        </div>
+                        <span class="error-msg" id="error-password"></span>
+                    </div>
+
+                    <div class="form-group" id="group-confirmPassword">
+                        <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="confirmPassword" name="confirmPassword"
+                                placeholder="Re-enter your password" autocomplete="new-password" />
+                            <button type="button" class="toggle-password" id="toggleConfirm"
+                                aria-label="Toggle confirm password visibility">👁</button>
+                        </div>
+                        <span class="error-msg" id="error-confirmPassword"></span>
+                    </div>
+                </div>
+
+                <!-- Website URL -->
+                <div class="form-group" id="group-website">
+                    <label for="website">Website / Portfolio <span class="optional">(optional)</span></label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🌐</span>
+                        <input type="url" id="website" name="website" placeholder="https://yourportfolio.com" />
+                    </div>
+                    <span class="error-msg" id="error-website"></span>
+                </div>
+
+                <!-- About -->
+                <div class="form-group" id="group-about">
+                    <label for="about">About You <span class="required">*</span></label>
+                    <div class="input-wrapper textarea-wrapper">
+                        <textarea id="about" name="about" rows="4"
+                            placeholder="Tell us a bit about yourself... (min 20 characters)"
+                            maxlength="500"></textarea>
+                    </div>
+                    <div class="char-count"><span id="aboutCount">0</span> / 500</div>
+                    <span class="error-msg" id="error-about"></span>
+                </div>
+
+                <!-- Terms -->
+                <div class="form-group checkbox-group" id="group-terms">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" name="terms" />
+                        <span class="checkbox-custom"></span>
+                        I agree to the <a href="#" class="link">Terms & Conditions</a> and <a href="#"
+                            class="link">Privacy Policy</a> <span class="required">*</span>
+                    </label>
+                    <span class="error-msg" id="error-terms"></span>
+                </div>
+
+                <!-- Buttons -->
+                <div class="form-actions">
+                    <button type="button" id="resetBtn" class="btn btn-secondary">Reset Form</button>
+                    <button type="submit" id="submitBtn" class="btn btn-primary">
+                        <span class="btn-text">Submit</span>
+                        <span class="btn-loader" id="btnLoader"></span>
+                    </button>
+                </div>
+
+            </form>
+
+        </main>
+
+        <footer class="page-footer">
+            SuprMentor Technologies Pvt Ltd &nbsp;·&nbsp; Full Stack Web Development Internship &nbsp;·&nbsp; Assignment
+            5
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
