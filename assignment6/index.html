@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Component Hunt — Break a popular website into components. SuprMentor Assignment 6" />
+    <title>Component Hunt | SuprMentor Assignment 6</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="page-header">
+        <div class="container">
+            <div class="header-top">
+                <span class="badge">Assignment 6 — 05/03/2026</span>
+            </div>
+            <h1>🔍 Component Hunt</h1>
+            <p class="subtitle">Breaking down <strong>Netflix</strong> into its UI components and sketching the
+                structure</p>
+            <div class="target-site">
+                <span class="site-label">Target Website</span>
+                <span class="site-name">🎬 Netflix — netflix.com</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- ===== SECTION 1: WHAT IS COMPONENT HUNT ===== -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-num">01</span>
+                <div>
+                    <h2>What is Component Hunt?</h2>
+                    <p>Identifying and naming every reusable UI piece that makes up a website.</p>
+                </div>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">🧩</div>
+                    <h3>Component</h3>
+                    <p>A self-contained, reusable piece of UI — like a button, card, or navigation bar — that has its
+                        own structure and style.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📐</div>
+                    <h3>Structure</h3>
+                    <p>How components are nested and arranged on the page — the hierarchy from the outermost layout to
+                        the smallest detail.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🔁</div>
+                    <h3>Reusability</h3>
+                    <p>The same component (e.g., a movie card) appears hundreds of times on Netflix — defined once,
+                        reused everywhere.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">⚙️</div>
+                    <h3>Why It Matters</h3>
+                    <p>Understanding components is the foundation of modern front-end development — React, Vue, and
+                        Angular are all component-based.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 2: NETFLIX PAGE WIREFRAME SKETCH ===== -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-num">02</span>
+                <div>
+                    <h2>Netflix Homepage — Wireframe Sketch</h2>
+                    <p>A structural sketch of the Netflix homepage, broken into labeled components.</p>
+                </div>
+            </div>
+
+            <div class="wireframe-wrapper">
+                <div class="wireframe-label">netflix.com — Homepage Wireframe</div>
+
+                <div class="wireframe">
+
+                    <!-- Navbar -->
+                    <div class="wf-block wf-navbar" data-component="Navbar">
+                        <div class="wf-logo">NETFLIX</div>
+                        <div class="wf-nav-links">
+                            <div class="wf-nav-link">Home</div>
+                            <div class="wf-nav-link">TV Shows</div>
+                            <div class="wf-nav-link">Movies</div>
+                            <div class="wf-nav-link">New &amp; Popular</div>
+                            <div class="wf-nav-link">My List</div>
+                        </div>
+                        <div class="wf-nav-right">
+                            <div class="wf-icon-btn">🔍</div>
+                            <div class="wf-icon-btn">🔔</div>
+                            <div class="wf-avatar"></div>
+                        </div>
+                        <div class="wf-tag">Navbar / Header Component</div>
+                    </div>
+
+                    <!-- Hero Banner -->
+                    <div class="wf-block wf-hero" data-component="HeroBanner">
+                        <div class="wf-hero-content">
+                            <div class="wf-hero-badge">⭐ #1 in India Today</div>
+                            <div class="wf-hero-title">STRANGER THINGS</div>
+                            <div class="wf-hero-desc">
+                                <div class="wf-line"></div>
+                                <div class="wf-line short"></div>
+                            </div>
+                            <div class="wf-hero-btns">
+                                <div class="wf-btn primary">▶ Play</div>
+                                <div class="wf-btn secondary">ℹ More Info</div>
+                            </div>
+                        </div>
+                        <div class="wf-tag">Hero Banner Component</div>
+                    </div>
+
+                    <!-- Row 1: Trending -->
+                    <div class="wf-block wf-row-section" data-component="ContentRow">
+                        <div class="wf-row-title">Trending Now</div>
+                        <div class="wf-cards-row">
+                            <div class="wf-card ranked"><span class="wf-rank">1</span>
+                                <div class="wf-card-img"></div>
+                            </div>
+                            <div class="wf-card ranked"><span class="wf-rank">2</span>
+                                <div class="wf-card-img"></div>
+                            </div>
+                            <div class="wf-card ranked"><span class="wf-rank">3</span>
+                                <div class="wf-card-img"></div>
+                            </div>
+                            <div class="wf-card ranked"><span class="wf-rank">4</span>
+                                <div class="wf-card-img"></div>
+                            </div>
+                            <div class="wf-card ranked"><span class="wf-rank">5</span>
+                                <div class="wf-card-img"></div>
+                            </div>
+                            <div class="wf-card ranked"><span class="wf-rank">6</span>
+                                <div class="wf-card-img"></div>
+                            </div>
+                        </div>
+                        <div class="wf-tag">Content Row → Movie Card Components</div>
+                    </div>
+
+                    <!-- Row 2: Continue Watching -->
+                    <div class="wf-block wf-row-section" data-component="ContentRow">
+                        <div class="wf-row-title">Continue Watching for You</div>
+                        <div class="wf-cards-row">
+                            <div class="wf-card progress">
+                                <div class="wf-card-img"></div>
+                                <div class="wf-progress-bar">
+                                    <div class="wf-progress-fill" style="width:65%"></div>
+                                </div>
+                            </div>
+                            <div class="wf-card progress">
+                                <div class="wf-card-img"></div>
+                                <div class="wf-progress-bar">
+                                    <div class="wf-progress-fill" style="width:30%"></div>
+                                </div>
+                            </div>
+                            <div class="wf-card progress">
+                                <div class="wf-card-img"></div>
+                                <div class="wf-progress-bar">
+                                    <div class="wf-progress-fill" style="width:80%"></div>
+                                </div>
+                            </div>
+                            <div class="wf-card progress">
+                                <div class="wf-card-img"></div>
+                                <div class="wf-progress-bar">
+                                    <div class="wf-progress-fill" style="width:15%"></div>
+                                </div>
+                            </div>
+                            <div class="wf-card progress">
+                                <div class="wf-card-img"></div>
+                                <div class="wf-progress-bar">
+                                    <div class="wf-progress-fill" style="width:50%"></div>
+                                </div>
+                            </div>
+                            <div class="wf-card progress">
+                                <div class="wf-card-img"></div>
+                                <div class="wf-progress-bar">
+                                    <div class="wf-progress-fill" style="width:90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wf-tag">Content Row → Movie Card with Progress Bar</div>
+                    </div>
+
+                    <!-- Row 3: Top Picks -->
+                    <div class="wf-block wf-row-section" data-component="ContentRow">
+                        <div class="wf-row-title">Top Picks for You</div>
+                        <div class="wf-cards-row">
+                            <div class="wf-card">
+                                <div class="wf-card-img"></div>
+                            </div>
+                            <div class="wf-card">
+                                <div class="wf-card-img"></div>
+                            </div>
+                            <div class="wf-card">
+                                <div class="wf-card-img"></div>
+                            </div>
+                            <div class="wf-card">
+                                <div class="wf-card-img"></div>
+                            </div>
+                            <div class="wf-card">
+                                <div class="wf-card-img"></div>
+                            </div>
+                            <div class="wf-card">
+                                <div class="wf-card-img"></div>
+                            </div>
+                        </div>
+                        <div class="wf-tag">Content Row → Movie Card Components</div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="wf-block wf-footer" data-component="Footer">
+                        <div class="wf-footer-logo">NETFLIX</div>
+                        <div class="wf-footer-links">
+                            <div class="wf-footer-col">
+                                <div class="wf-flink"></div>
+                                <div class="wf-flink"></div>
+                                <div class="wf-flink"></div>
+                            </div>
+                            <div class="wf-footer-col">
+                                <div class="wf-flink"></div>
+                                <div class="wf-flink"></div>
+                                <div class="wf-flink"></div>
+                            </div>
+                            <div class="wf-footer-col">
+                                <div class="wf-flink"></div>
+                                <div class="wf-flink"></div>
+                                <div class="wf-flink"></div>
+                            </div>
+                            <div class="wf-footer-col">
+                                <div class="wf-flink"></div>
+                                <div class="wf-flink"></div>
+                                <div class="wf-flink"></div>
+                            </div>
+                        </div>
+                        <div class="wf-tag">Footer Component</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3: COMPONENT TREE ===== -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-num">03</span>
+                <div>
+                    <h2>Component Tree Structure</h2>
+                    <p>The parent-child hierarchy of all Netflix UI components.</p>
+                </div>
+            </div>
+
+            <div class="tree-card">
+                <div class="tree-root">
+                    <div class="tree-node root-node">
+                        <span class="node-icon">🌐</span> &lt;NetflixApp /&gt;
+                    </div>
+                    <div class="tree-children">
+
+                        <!-- Navbar -->
+                        <div class="tree-branch">
+                            <div class="tree-node comp-node navbar-node">
+                                <span class="node-icon">🔝</span> &lt;Navbar /&gt;
+                            </div>
+                            <div class="tree-children">
+                                <div class="tree-node leaf-node"><span class="node-icon">🎬</span> &lt;Logo /&gt;</div>
+                                <div class="tree-node leaf-node"><span class="node-icon">🔗</span> &lt;NavLinks /&gt;
+                                </div>
+                                <div class="tree-node leaf-node"><span class="node-icon">🔍</span> &lt;SearchBar /&gt;
+                                </div>
+                                <div class="tree-node leaf-node"><span class="node-icon">🔔</span> &lt;NotificationBell
+                                    /&gt;</div>
+                                <div class="tree-node leaf-node"><span class="node-icon">👤</span> &lt;UserAvatar /&gt;
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hero -->
+                        <div class="tree-branch">
+                            <div class="tree-node comp-node hero-node">
+                                <span class="node-icon">🎞️</span> &lt;HeroBanner /&gt;
+                            </div>
+                            <div class="tree-children">
+                                <div class="tree-node leaf-node"><span class="node-icon">🏷️</span> &lt;TrendingBadge
+                                    /&gt;</div>
+                                <div class="tree-node leaf-node"><span class="node-icon">📝</span> &lt;ShowTitle /&gt;
+                                </div>
+                                <div class="tree-node leaf-node"><span class="node-icon">📄</span> &lt;Description /&gt;
+                                </div>
+                                <div class="tree-node leaf-node"><span class="node-icon">▶️</span> &lt;PlayButton /&gt;
+                                </div>
+                                <div class="tree-node leaf-node"><span class="node-icon">ℹ️</span> &lt;MoreInfoButton
+                                    /&gt;</div>
+                            </div>
+                        </div>
+
+                        <!-- Content Rows -->
+                        <div class="tree-branch">
+                            <div class="tree-node comp-node row-node">
+                                <span class="node-icon">📦</span> &lt;ContentSection /&gt;
+                            </div>
+                            <div class="tree-children">
+                                <div class="tree-node leaf-node"><span class="node-icon">🏷️</span> &lt;SectionTitle
+                                    /&gt;</div>
+                                <div class="tree-branch">
+                                    <div class="tree-node comp-node">
+                                        <span class="node-icon">➡️</span> &lt;ContentRow /&gt; <em>(×N)</em>
+                                    </div>
+                                    <div class="tree-children">
+                                        <div class="tree-node leaf-node"><span class="node-icon">⬅️</span>
+                                            &lt;ScrollButton /&gt;</div>
+                                        <div class="tree-branch">
+                                            <div class="tree-node comp-node">
+                                                <span class="node-icon">🎴</span> &lt;MovieCard /&gt; <em>(×N)</em>
+                                            </div>
+                                            <div class="tree-children">
+                                                <div class="tree-node leaf-node"><span class="node-icon">🖼️</span>
+                                                    &lt;Thumbnail /&gt;</div>
+                                                <div class="tree-node leaf-node"><span class="node-icon">▶️</span>
+                                                    &lt;PlayOverlay /&gt;</div>
+                                                <div class="tree-node leaf-node"><span class="node-icon">➕</span>
+                                                    &lt;AddToListBtn /&gt;</div>
+                                                <div class="tree-node leaf-node"><span class="node-icon">👍</span>
+                                                    &lt;LikeButton /&gt;</div>
+                                                <div class="tree-node leaf-node"><span class="node-icon">📊</span>
+                                                    &lt;ProgressBar /&gt;</div>
+                                                <div class="tree-node leaf-node"><span class="node-icon">🏅</span>
+                                                    &lt;RankBadge /&gt;</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="tree-branch">
+                            <div class="tree-node comp-node footer-node">
+                                <span class="node-icon">🔻</span> &lt;Footer /&gt;
+                            </div>
+                            <div class="tree-children">
+                                <div class="tree-node leaf-node"><span class="node-icon">🎬</span> &lt;FooterLogo /&gt;
+                                </div>
+                                <div class="tree-node leaf-node"><span class="node-icon">🔗</span> &lt;FooterLinks /&gt;
+                                </div>
+                                <div class="tree-node leaf-node"><span class="node-icon">©️</span> &lt;Copyright /&gt;
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 4: COMPONENT CATALOGUE ===== -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-num">04</span>
+                <div>
+                    <h2>Component Catalogue</h2>
+                    <p>All identified components with their type, purpose, and props.</p>
+                </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs" id="filterTabs">
+                <button class="tab active" data-filter="all">All</button>
+                <button class="tab" data-filter="layout">Layout</button>
+                <button class="tab" data-filter="ui">UI Element</button>
+                <button class="tab" data-filter="content">Content</button>
+                <button class="tab" data-filter="interactive">Interactive</button>
+            </div>
+
+            <div class="catalogue-grid" id="catalogueGrid">
+
+                <div class="comp-card" data-type="layout">
+                    <div class="comp-header">
+                        <div class="comp-icon">🔝</div>
+                        <div>
+                            <div class="comp-name">&lt;Navbar /&gt;</div>
+                            <div class="comp-type layout">Layout</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Top navigation bar that appears on every page. Sticks to the top while
+                        scrolling.</p>
+                    <div class="comp-props">
+                        <span class="prop">transparent: bool</span>
+                        <span class="prop">userProfile: object</span>
+                        <span class="prop">notifications: array</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="content">
+                    <div class="comp-header">
+                        <div class="comp-icon">🎞️</div>
+                        <div>
+                            <div class="comp-name">&lt;HeroBanner /&gt;</div>
+                            <div class="comp-type content">Content</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Full-width featured show banner at the top. Auto-rotates between featured
+                        titles every 30 seconds.</p>
+                    <div class="comp-props">
+                        <span class="prop">show: object</span>
+                        <span class="prop">autoPlay: bool</span>
+                        <span class="prop">interval: number</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="layout">
+                    <div class="comp-header">
+                        <div class="comp-icon">➡️</div>
+                        <div>
+                            <div class="comp-name">&lt;ContentRow /&gt;</div>
+                            <div class="comp-type layout">Layout</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Horizontally scrollable row of movie/show cards. Used for every category on the
+                        homepage.</p>
+                    <div class="comp-props">
+                        <span class="prop">title: string</span>
+                        <span class="prop">items: array</span>
+                        <span class="prop">ranked: bool</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="content">
+                    <div class="comp-header">
+                        <div class="comp-icon">🎴</div>
+                        <div>
+                            <div class="comp-name">&lt;MovieCard /&gt;</div>
+                            <div class="comp-type content">Content</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Individual show/movie thumbnail card. On hover, expands to show title, rating,
+                        and action buttons.</p>
+                    <div class="comp-props">
+                        <span class="prop">title: string</span>
+                        <span class="prop">thumbnail: string</span>
+                        <span class="prop">rating: number</span>
+                        <span class="prop">progress: number</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="interactive">
+                    <div class="comp-header">
+                        <div class="comp-icon">▶️</div>
+                        <div>
+                            <div class="comp-name">&lt;PlayButton /&gt;</div>
+                            <div class="comp-type interactive">Interactive</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Primary CTA button that starts playback of the selected movie or show
+                        immediately.</p>
+                    <div class="comp-props">
+                        <span class="prop">onClick: function</span>
+                        <span class="prop">label: string</span>
+                        <span class="prop">size: string</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="interactive">
+                    <div class="comp-header">
+                        <div class="comp-icon">🔍</div>
+                        <div>
+                            <div class="comp-name">&lt;SearchBar /&gt;</div>
+                            <div class="comp-type interactive">Interactive</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Expandable search input in the navbar. Shows suggestions as the user types.</p>
+                    <div class="comp-props">
+                        <span class="prop">onSearch: function</span>
+                        <span class="prop">placeholder: string</span>
+                        <span class="prop">autoSuggest: bool</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="ui">
+                    <div class="comp-header">
+                        <div class="comp-icon">📊</div>
+                        <div>
+                            <div class="comp-name">&lt;ProgressBar /&gt;</div>
+                            <div class="comp-type ui">UI Element</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Shows how far the user has watched a title. Displayed at the bottom of movie
+                        cards in "Continue Watching".</p>
+                    <div class="comp-props">
+                        <span class="prop">percent: number</span>
+                        <span class="prop">color: string</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="interactive">
+                    <div class="comp-header">
+                        <div class="comp-icon">🔔</div>
+                        <div>
+                            <div class="comp-name">&lt;NotificationBell /&gt;</div>
+                            <div class="comp-type interactive">Interactive</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Bell icon in the navbar showing number of new activity alerts. Opens a dropdown
+                        on click.</p>
+                    <div class="comp-props">
+                        <span class="prop">count: number</span>
+                        <span class="prop">notifications: array</span>
+                        <span class="prop">onDismiss: function</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="ui">
+                    <div class="comp-header">
+                        <div class="comp-icon">🏅</div>
+                        <div>
+                            <div class="comp-name">&lt;RankBadge /&gt;</div>
+                            <div class="comp-type ui">UI Element</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Large outlined number (1–10) overlapping the movie card thumbnail to indicate
+                        trending rank.</p>
+                    <div class="comp-props">
+                        <span class="prop">rank: number</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="interactive">
+                    <div class="comp-header">
+                        <div class="comp-icon">➕</div>
+                        <div>
+                            <div class="comp-name">&lt;AddToListBtn /&gt;</div>
+                            <div class="comp-type interactive">Interactive</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Circular button on each movie card to add/remove shows from the user's personal
+                        "My List".</p>
+                    <div class="comp-props">
+                        <span class="prop">isAdded: bool</span>
+                        <span class="prop">onToggle: function</span>
+                        <span class="prop">showId: string</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="ui">
+                    <div class="comp-header">
+                        <div class="comp-icon">👤</div>
+                        <div>
+                            <div class="comp-name">&lt;UserAvatar /&gt;</div>
+                            <div class="comp-type ui">UI Element</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Profile image icon in the navbar. Opens a dropdown with profile switcher and
+                        account options on hover.</p>
+                    <div class="comp-props">
+                        <span class="prop">src: string</span>
+                        <span class="prop">profiles: array</span>
+                        <span class="prop">onSwitch: function</span>
+                    </div>
+                </div>
+
+                <div class="comp-card" data-type="layout">
+                    <div class="comp-header">
+                        <div class="comp-icon">🔻</div>
+                        <div>
+                            <div class="comp-name">&lt;Footer /&gt;</div>
+                            <div class="comp-type layout">Layout</div>
+                        </div>
+                    </div>
+                    <p class="comp-desc">Bottom section of the page with links to Help, Press, Jobs, Privacy, and
+                        language selector.</p>
+                    <div class="comp-props">
+                        <span class="prop">links: array</span>
+                        <span class="prop">language: string</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== SECTION 5: KEY LEARNINGS ===== -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-num">05</span>
+                <div>
+                    <h2>Key Learnings</h2>
+                    <p>Insights gained by hunting components on Netflix.</p>
+                </div>
+            </div>
+            <div class="learnings-grid">
+                <div class="learning-card">
+                    <div class="l-num">01</div>
+                    <h3>Everything is a Component</h3>
+                    <p>Even the smallest UI piece — a like button, a rank badge, a progress bar — is a standalone
+                        component with its own logic and style.</p>
+                </div>
+                <div class="learning-card">
+                    <div class="l-num">02</div>
+                    <h3>Reuse Over Repeat</h3>
+                    <p>The same <code>&lt;MovieCard /&gt;</code> is reused across dozens of rows. Different data
+                        (props), same structure — this is the power of components.</p>
+                </div>
+                <div class="learning-card">
+                    <div class="l-num">03</div>
+                    <h3>Parent Passes, Child Displays</h3>
+                    <p>Parent components like <code>&lt;ContentRow /&gt;</code> pass data down to
+                        <code>&lt;MovieCard /&gt;</code> children via props.</p>
+                </div>
+                <div class="learning-card">
+                    <div class="l-num">04</div>
+                    <h3>Components Have State</h3>
+                    <p>Some components manage their own data — <code>&lt;SearchBar /&gt;</code> tracks input text,
+                        <code>&lt;AddToListBtn /&gt;</code> tracks added/not-added state.</p>
+                </div>
+                <div class="learning-card">
+                    <div class="l-num">05</div>
+                    <h3>Layout vs. UI vs. Content</h3>
+                    <p>Components can be classified: Layout (structure), UI Elements (buttons, badges), Content (cards,
+                        banners), and Interactive (forms, toggles).</p>
+                </div>
+                <div class="learning-card">
+                    <div class="l-num">06</div>
+                    <h3>Think in Trees</h3>
+                    <p>Web UIs are trees — a root &lt;App&gt;, with branches for pages, sections, rows, and leaves for
+                        individual elements.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            SuprMentor Technologies Pvt Ltd &nbsp;·&nbsp; Full Stack Web Development Internship &nbsp;·&nbsp; Assignment
+            6
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
